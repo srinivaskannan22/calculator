@@ -18,7 +18,8 @@ function handleClick(event) {
         try {
             inputElement.value!=""?
             inputElement.value = eval(inputElement.value):
-            inputElement.value="0"; // Evaluate the input content
+            inputElement.value="0";
+            change();// Evaluate the input content
         } catch {
             inputElement.value = "Error"; // Display error if evaluation fails
         }
