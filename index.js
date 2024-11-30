@@ -50,6 +50,12 @@ function change() {
     // Update the output area with the current input value
     outputElement.textContent = inputElement;
 }
+document.addEventListener('keydown',function(event){
+    if(event.key==='Enter'){
+        b=document.querySelector("input");
+        b.focus();
+    }
+})
 
 
 
