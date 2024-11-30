@@ -56,10 +56,6 @@ document.addEventListener('keydown',function(event){
         b.focus();
     }
 })
-document.addEventListener('touchstart',function(event){
-        b=document.querySelector("input");
-        b.focus();
-})
 
 
 
