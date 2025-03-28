@@ -1,12 +1,21 @@
 version: 0.0
-os: ubuntu
+os: linux
+
 files:
   - source: /
-    destination: /home/ec2-user/calculator
+    destination: /home/ec2-user   # Target directory
+    overwrite: true
+
 hooks:
   BeforeInstall:
-    - location: uploadDir/preScript.sh
+    - location: scripts/preScript.sh    # Correct relative path
       timeout: 300
+      runas: root
   AfterInstall:
-    - location: uploadDir/postScript.sh
+    - location: scripts/postScript.sh   # Correct relative path
       timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      timeout: 300
+      runas: root
