@@ -1,0 +1,12 @@
+version: 0.0
+os: ubuntu
+files:
+  - source: /
+    destination: /home/ec2-user/calculator
+hooks:
+  BeforeInstall:
+    - location: uploadDir/preScript.sh
+      timeout: 300
+  AfterInstall:
+    - location: uploadDir/postScript.sh
+      timeout: 300
