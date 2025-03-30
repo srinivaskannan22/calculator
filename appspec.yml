@@ -3,14 +3,10 @@ os: linux   # Use 'linux' for Ubuntu, not 'ubuntu'
 
 files:
   - source: /
-    destination: /home/ec2-user/calculator
+    destination: /var/www/html
     overwrite: true
 
 hooks:
-  BeforeInstall:
-    - location: scripts/preScript.sh    # Correct relative path
-      timeout: 300
-      runas: root
   AfterInstall:
     - location: scripts/postScript.sh   # Correct relative path
       timeout: 300
